@@ -145,7 +145,6 @@ def confidence_fit(x, y, func, params, covariance, alpha=0.05):
     ranges = []
     for i in range(len(x)):
         x_i = x[i]
-        cov_i = covariance[0, 0] * x_i ** 2 + covariance[1, 1] + 2 * x_i * covariance[0, 1]
         range_i = t * s * np.sqrt(1 + 1 / n + (x_i - np.mean(x)) ** 2 / ((n - 1) * np.var(x)))
         ranges.append(range_i)
 
@@ -431,7 +430,12 @@ confidence_ranges = confidence_fit(x, y, linear_func, params, covariance)
 
 # Obtain only 30 values from confidence_ranges
 confidence_ranges = confidence_ranges[:30]
-
+print(333333333333)
+print(x_pred)
+print(6666666666666)
+print(y_pred)
+print(88888888888)
+print(confidence_ranges)
 
 # Plot the data points, best fitting function, and confidence range
 plt.scatter(x, y, label='Data')
