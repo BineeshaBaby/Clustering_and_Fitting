@@ -249,6 +249,7 @@ selected_indicators = [
 
 # Filter the data to include only the selected indicators
 df = data[data['Indicator Name'].isin(selected_indicators)]
+df1 = data.T
 
 # Pivot the data to have countries as rows and indicators as columns
 df_pivot = df.pivot_table(index='Country Name', columns='Indicator Name', values='2019', aggfunc='mean')
@@ -430,12 +431,6 @@ confidence_ranges = confidence_fit(x, y, linear_func, params, covariance)
 
 # Obtain only 30 values from confidence_ranges
 confidence_ranges = confidence_ranges[:30]
-print(333333333333)
-print(x_pred)
-print(6666666666666)
-print(y_pred)
-print(88888888888)
-print(confidence_ranges)
 
 # Plot the data points, best fitting function, and confidence range
 plt.scatter(x, y, label='Data')
